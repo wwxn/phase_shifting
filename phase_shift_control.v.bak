@@ -1,0 +1,43 @@
+module phase_shift_control
+(
+	input clk,
+	input rst_n,
+	input [11:0] data_in,
+	input [8:0] usedw,
+	output wrreq,
+	output rdreq,
+	output [11:0] data_out
+);
+
+
+parameter WAIT=3'b000;
+parameter OUTPUT=3'b001;
+
+assign wrreq=1'b1;
+assign rdreq=(state_next==OUTPUT)?1'b1:1'b0;
+assign data_out=(state_next==OUTPUT)?data_in:data_out;
+
+reg [2:0] state;
+reg [2:0] state_next;
+
+always@(posedge clk)
+if(!rst_n)
+	state<=WAIT;
+else
+	state<=state_next;
+	
+
+always@*
+begin
+	state_next<=3'bx;
+	case (state)
+	WAIT:
+		if(usedw>=8'd63)
+			state_next<=OUTPUT;
+		else
+			state_next<=WAIT;
+	endcase
+end
+
+endmodule 
+
