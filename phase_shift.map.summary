@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Jun 06 22:49:50 2019
+Quartus II Version : 11.0 Build 157 04/27/2011 SJ Full Version
+Revision Name : phase_shift
+Top-level Entity Name : phase_shift
+Family : Cyclone II
+Total logic elements : 83
+    Total combinational functions : 83
+    Dedicated logic registers : 40
+Total registers : 40
+Total pins : 35
+Total virtual pins : 0
+Total memory bits : 9,216
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

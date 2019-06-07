@@ -1,0 +1,646 @@
+Analysis & Synthesis report for phase_shift
+Thu Jun 06 22:49:50 2019
+Quartus II Version 11.0 Build 157 04/27/2011 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |phase_shift|phase_shift_control:b2v_inst4|state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Source assignments for fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo|dpram_cv01:FIFOram|altsyncram_2vj1:altsyncram2
+ 15. Source assignments for fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo|dpram_cv01:FIFOram|altsyncram_2vj1:altsyncram2|altsyncram_3pc1:altsyncram3
+ 16. Source assignments for rom:b2v_inst3|altsyncram:altsyncram_component|altsyncram_tk91:auto_generated
+ 17. Parameter Settings for User Entity Instance: fifo:b2v_inst|scfifo:scfifo_component
+ 18. Parameter Settings for User Entity Instance: rom:b2v_inst3|altsyncram:altsyncram_component
+ 19. Parameter Settings for User Entity Instance: phase_shift_control:b2v_inst4
+ 20. scfifo Parameter Settings by Entity Instance
+ 21. altsyncram Parameter Settings by Entity Instance
+ 22. Port Connectivity Checks: "fifo:b2v_inst"
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                   ;
++------------------------------------+-------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Jun 06 22:49:50 2019     ;
+; Quartus II Version                 ; 11.0 Build 157 04/27/2011 SJ Full Version ;
+; Revision Name                      ; phase_shift                               ;
+; Top-level Entity Name              ; phase_shift                               ;
+; Family                             ; Cyclone II                                ;
+; Total logic elements               ; 83                                        ;
+;     Total combinational functions  ; 83                                        ;
+;     Dedicated logic registers      ; 40                                        ;
+; Total registers                    ; 40                                        ;
+; Total pins                         ; 35                                        ;
+; Total virtual pins                 ; 0                                         ;
+; Total memory bits                  ; 9,216                                     ;
+; Embedded Multiplier 9-bit elements ; 0                                         ;
+; Total PLLs                         ; 0                                         ;
++------------------------------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C5T144C8        ;                    ;
+; Top-level entity name                                                      ; phase_shift        ; phase_shift        ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 3                  ; 3                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                         ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------+
+; code/phase_shift_control.v       ; yes             ; User Verilog HDL File                  ; C:/Users/wxn/Desktop/phase_shift/code/phase_shift_control.v          ;
+; ipcore/rom.v                     ; yes             ; User Wizard-Generated File             ; C:/Users/wxn/Desktop/phase_shift/ipcore/rom.v                        ;
+; ipcore/fifo.v                    ; yes             ; User Wizard-Generated File             ; C:/Users/wxn/Desktop/phase_shift/ipcore/fifo.v                       ;
+; code/rom_read.v                  ; yes             ; User Verilog HDL File                  ; C:/Users/wxn/Desktop/phase_shift/code/rom_read.v                     ;
+; code/phase_shift.v               ; yes             ; User Verilog HDL File                  ; C:/Users/wxn/Desktop/phase_shift/code/phase_shift.v                  ;
+; scfifo.tdf                       ; yes             ; Megafunction                           ; d:/altera/11.0/quartus/libraries/megafunctions/scfifo.tdf            ;
+; a_regfifo.inc                    ; yes             ; Megafunction                           ; d:/altera/11.0/quartus/libraries/megafunctions/a_regfifo.inc         ;
+; a_dpfifo.inc                     ; yes             ; Megafunction                           ; d:/altera/11.0/quartus/libraries/megafunctions/a_dpfifo.inc          ;
+; a_i2fifo.inc                     ; yes             ; Megafunction                           ; d:/altera/11.0/quartus/libraries/megafunctions/a_i2fifo.inc          ;
+; a_fffifo.inc                     ; yes             ; Megafunction                           ; d:/altera/11.0/quartus/libraries/megafunctions/a_fffifo.inc          ;
+; a_f2fifo.inc                     ; yes             ; Megafunction                           ; d:/altera/11.0/quartus/libraries/megafunctions/a_f2fifo.inc          ;
+; aglobal110.inc                   ; yes             ; Megafunction                           ; d:/altera/11.0/quartus/libraries/megafunctions/aglobal110.inc        ;
+; db/scfifo_4t31.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/Users/wxn/Desktop/phase_shift/db/scfifo_4t31.tdf                  ;
+; db/a_dpfifo_nk31.tdf             ; yes             ; Auto-Generated Megafunction            ; C:/Users/wxn/Desktop/phase_shift/db/a_dpfifo_nk31.tdf                ;
+; db/a_fefifo_s7f.tdf              ; yes             ; Auto-Generated Megafunction            ; C:/Users/wxn/Desktop/phase_shift/db/a_fefifo_s7f.tdf                 ;
+; db/cntr_go7.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/wxn/Desktop/phase_shift/db/cntr_go7.tdf                     ;
+; db/dpram_cv01.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/wxn/Desktop/phase_shift/db/dpram_cv01.tdf                   ;
+; db/altsyncram_2vj1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/wxn/Desktop/phase_shift/db/altsyncram_2vj1.tdf              ;
+; db/altsyncram_3pc1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/wxn/Desktop/phase_shift/db/altsyncram_3pc1.tdf              ;
+; db/cntr_ijb.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/wxn/Desktop/phase_shift/db/cntr_ijb.tdf                     ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; d:/altera/11.0/quartus/libraries/megafunctions/altsyncram.tdf        ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; d:/altera/11.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; d:/altera/11.0/quartus/libraries/megafunctions/lpm_mux.inc           ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; d:/altera/11.0/quartus/libraries/megafunctions/lpm_decode.inc        ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; d:/altera/11.0/quartus/libraries/megafunctions/a_rdenreg.inc         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; d:/altera/11.0/quartus/libraries/megafunctions/altrom.inc            ;
+; altram.inc                       ; yes             ; Megafunction                           ; d:/altera/11.0/quartus/libraries/megafunctions/altram.inc            ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; d:/altera/11.0/quartus/libraries/megafunctions/altdpram.inc          ;
+; db/altsyncram_tk91.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/wxn/Desktop/phase_shift/db/altsyncram_tk91.tdf              ;
+; sine.mif                         ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/wxn/Desktop/phase_shift/sine.mif                            ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 83    ;
+;                                             ;       ;
+; Total combinational functions               ; 83    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 20    ;
+;     -- 3 input functions                    ; 32    ;
+;     -- <=2 input functions                  ; 31    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 45    ;
+;     -- arithmetic mode                      ; 38    ;
+;                                             ;       ;
+; Total registers                             ; 40    ;
+;     -- Dedicated logic registers            ; 40    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 35    ;
+; Total memory bits                           ; 9216  ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 64    ;
+; Total fan-out                               ; 796   ;
+; Average fan-out                             ; 4.37  ;
++---------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                           ;
++----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                           ; Library Name ;
++----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |phase_shift                                       ; 83 (2)            ; 40 (0)       ; 9216        ; 0            ; 0       ; 0         ; 35   ; 0            ; |phase_shift                                                                                                                                                                  ;              ;
+;    |fifo:b2v_inst|                                 ; 47 (0)            ; 29 (0)       ; 6144        ; 0            ; 0       ; 0         ; 0    ; 0            ; |phase_shift|fifo:b2v_inst                                                                                                                                                    ;              ;
+;       |scfifo:scfifo_component|                    ; 47 (0)            ; 29 (0)       ; 6144        ; 0            ; 0       ; 0         ; 0    ; 0            ; |phase_shift|fifo:b2v_inst|scfifo:scfifo_component                                                                                                                            ;              ;
+;          |scfifo_4t31:auto_generated|              ; 47 (0)            ; 29 (0)       ; 6144        ; 0            ; 0       ; 0         ; 0    ; 0            ; |phase_shift|fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated                                                                                                 ;              ;
+;             |a_dpfifo_nk31:dpfifo|                 ; 47 (11)           ; 29 (0)       ; 6144        ; 0            ; 0       ; 0         ; 0    ; 0            ; |phase_shift|fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo                                                                            ;              ;
+;                |a_fefifo_s7f:fifo_state|           ; 17 (7)            ; 11 (2)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |phase_shift|fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo|a_fefifo_s7f:fifo_state                                                    ;              ;
+;                   |cntr_go7:count_usedw|           ; 10 (10)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |phase_shift|fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo|a_fefifo_s7f:fifo_state|cntr_go7:count_usedw                               ;              ;
+;                |cntr_ijb:rd_ptr_count|             ; 9 (9)             ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |phase_shift|fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo|cntr_ijb:rd_ptr_count                                                      ;              ;
+;                |cntr_ijb:wr_ptr|                   ; 10 (10)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |phase_shift|fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo|cntr_ijb:wr_ptr                                                            ;              ;
+;                |dpram_cv01:FIFOram|                ; 0 (0)             ; 0 (0)        ; 6144        ; 0            ; 0       ; 0         ; 0    ; 0            ; |phase_shift|fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo|dpram_cv01:FIFOram                                                         ;              ;
+;                   |altsyncram_2vj1:altsyncram2|    ; 0 (0)             ; 0 (0)        ; 6144        ; 0            ; 0       ; 0         ; 0    ; 0            ; |phase_shift|fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo|dpram_cv01:FIFOram|altsyncram_2vj1:altsyncram2                             ;              ;
+;                      |altsyncram_3pc1:altsyncram3| ; 0 (0)             ; 0 (0)        ; 6144        ; 0            ; 0       ; 0         ; 0    ; 0            ; |phase_shift|fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo|dpram_cv01:FIFOram|altsyncram_2vj1:altsyncram2|altsyncram_3pc1:altsyncram3 ;              ;
+;    |phase_shift_control:b2v_inst4|                 ; 26 (26)           ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |phase_shift|phase_shift_control:b2v_inst4                                                                                                                                    ;              ;
+;    |rom:b2v_inst3|                                 ; 0 (0)             ; 0 (0)        ; 3072        ; 0            ; 0       ; 0         ; 0    ; 0            ; |phase_shift|rom:b2v_inst3                                                                                                                                                    ;              ;
+;       |altsyncram:altsyncram_component|            ; 0 (0)             ; 0 (0)        ; 3072        ; 0            ; 0       ; 0         ; 0    ; 0            ; |phase_shift|rom:b2v_inst3|altsyncram:altsyncram_component                                                                                                                    ;              ;
+;          |altsyncram_tk91:auto_generated|          ; 0 (0)             ; 0 (0)        ; 3072        ; 0            ; 0       ; 0         ; 0    ; 0            ; |phase_shift|rom:b2v_inst3|altsyncram:altsyncram_component|altsyncram_tk91:auto_generated                                                                                     ;              ;
+;    |rom_read:b2v_inst5|                            ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |phase_shift|rom_read:b2v_inst5                                                                                                                                               ;              ;
++----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                  ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+----------+
+; Name                                                                                                                                                                        ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF      ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+----------+
+; fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo|dpram_cv01:FIFOram|altsyncram_2vj1:altsyncram2|altsyncram_3pc1:altsyncram3|ALTSYNCRAM ; AUTO ; True Dual Port ; 512          ; 12           ; 512          ; 12           ; 6144 ; None     ;
+; rom:b2v_inst3|altsyncram:altsyncram_component|altsyncram_tk91:auto_generated|ALTSYNCRAM                                                                                     ; AUTO ; ROM            ; 256          ; 12           ; --           ; --           ; 3072 ; sine.mif ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                       ;
++--------+--------------+---------+--------------+--------------+----------------------------+------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance            ; IP Include File                                ;
++--------+--------------+---------+--------------+--------------+----------------------------+------------------------------------------------+
+; Altera ; FIFO         ; 11.0    ; N/A          ; N/A          ; |phase_shift|fifo:b2v_inst ; C:/Users/wxn/Desktop/phase_shift/ipcore/fifo.v ;
+; Altera ; ROM: 1-PORT  ; 13.1    ; N/A          ; N/A          ; |phase_shift|rom:b2v_inst3 ; C:/Users/wxn/Desktop/phase_shift/ipcore/rom.v  ;
++--------+--------------+---------+--------------+--------------+----------------------------+------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------+
+; State Machine - |phase_shift|phase_shift_control:b2v_inst4|state ;
++--------------+--------------+-------------+----------------------+
+; Name         ; state.OUTPUT ; state.CLEAR ; state.WAIT           ;
++--------------+--------------+-------------+----------------------+
+; state.WAIT   ; 0            ; 0           ; 0                    ;
+; state.OUTPUT ; 1            ; 0           ; 1                    ;
+; state.CLEAR  ; 0            ; 1           ; 1                    ;
++--------------+--------------+-------------+----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                    ;
++-----------------------------------------------------+-----------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                     ; Free of Timing Hazards ;
++-----------------------------------------------------+-----------------------------------------+------------------------+
+; phase_shift_control:b2v_inst4|data_out[0]           ; phase_shift_control:b2v_inst4|Selector1 ; yes                    ;
+; phase_shift_control:b2v_inst4|data_out[1]           ; phase_shift_control:b2v_inst4|Selector1 ; yes                    ;
+; phase_shift_control:b2v_inst4|data_out[2]           ; phase_shift_control:b2v_inst4|Selector1 ; yes                    ;
+; phase_shift_control:b2v_inst4|data_out[3]           ; phase_shift_control:b2v_inst4|Selector1 ; yes                    ;
+; phase_shift_control:b2v_inst4|data_out[4]           ; phase_shift_control:b2v_inst4|Selector1 ; yes                    ;
+; phase_shift_control:b2v_inst4|data_out[5]           ; phase_shift_control:b2v_inst4|Selector1 ; yes                    ;
+; phase_shift_control:b2v_inst4|data_out[6]           ; phase_shift_control:b2v_inst4|Selector1 ; yes                    ;
+; phase_shift_control:b2v_inst4|data_out[7]           ; phase_shift_control:b2v_inst4|Selector1 ; yes                    ;
+; phase_shift_control:b2v_inst4|data_out[8]           ; phase_shift_control:b2v_inst4|Selector1 ; yes                    ;
+; phase_shift_control:b2v_inst4|data_out[9]           ; phase_shift_control:b2v_inst4|Selector1 ; yes                    ;
+; phase_shift_control:b2v_inst4|data_out[10]          ; phase_shift_control:b2v_inst4|Selector1 ; yes                    ;
+; phase_shift_control:b2v_inst4|data_out[11]          ; phase_shift_control:b2v_inst4|Selector1 ; yes                    ;
+; Number of user-specified and inferred latches = 12  ;                                         ;                        ;
++-----------------------------------------------------+-----------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; phase_shift_control:b2v_inst4|state~4 ; Lost fanout        ;
+; Total Number of Removed Registers = 1 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 40    ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 27    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 27    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo|dpram_cv01:FIFOram|altsyncram_2vj1:altsyncram2 ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                            ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                             ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo|dpram_cv01:FIFOram|altsyncram_2vj1:altsyncram2|altsyncram_3pc1:altsyncram3 ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                                        ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                         ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Source assignments for rom:b2v_inst3|altsyncram:altsyncram_component|altsyncram_tk91:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------+
+; Assignment                      ; Value              ; From ; To                                    ;
++---------------------------------+--------------------+------+---------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                     ;
++---------------------------------+--------------------+------+---------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fifo:b2v_inst|scfifo:scfifo_component ;
++-------------------------+-------------+--------------------------------------------+
+; Parameter Name          ; Value       ; Type                                       ;
++-------------------------+-------------+--------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                             ;
+; lpm_width               ; 12          ; Signed Integer                             ;
+; LPM_NUMWORDS            ; 512         ; Signed Integer                             ;
+; LPM_WIDTHU              ; 9           ; Signed Integer                             ;
+; LPM_SHOWAHEAD           ; OFF         ; Untyped                                    ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                                    ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                                    ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                    ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                    ;
+; ALMOST_FULL_VALUE       ; 0           ; Untyped                                    ;
+; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                    ;
+; USE_EAB                 ; ON          ; Untyped                                    ;
+; MAXIMIZE_SPEED          ; 5           ; Untyped                                    ;
+; DEVICE_FAMILY           ; Cyclone II  ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                    ;
+; CBXI_PARAMETER          ; scfifo_4t31 ; Untyped                                    ;
++-------------------------+-------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rom:b2v_inst3|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+--------------------------------+
+; Parameter Name                     ; Value                ; Type                           ;
++------------------------------------+----------------------+--------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                        ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                 ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                        ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                        ;
+; WIDTH_A                            ; 12                   ; Signed Integer                 ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer                 ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer                 ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                        ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                        ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                        ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                        ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                        ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                        ;
+; WIDTH_B                            ; 1                    ; Untyped                        ;
+; WIDTHAD_B                          ; 1                    ; Untyped                        ;
+; NUMWORDS_B                         ; 1                    ; Untyped                        ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                        ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                        ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                        ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                        ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                        ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                        ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                        ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                        ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                        ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                        ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                        ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                 ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                        ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                        ;
+; BYTE_SIZE                          ; 8                    ; Untyped                        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                        ;
+; INIT_FILE                          ; sine.mif             ; Untyped                        ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                        ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                        ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                        ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                        ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                        ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                        ;
+; CBXI_PARAMETER                     ; altsyncram_tk91      ; Untyped                        ;
++------------------------------------+----------------------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: phase_shift_control:b2v_inst4 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; WAIT           ; 000   ; Unsigned Binary                                   ;
+; OUTPUT         ; 001   ; Unsigned Binary                                   ;
+; CLEAR          ; 011   ; Unsigned Binary                                   ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; scfifo Parameter Settings by Entity Instance                       ;
++----------------------------+---------------------------------------+
+; Name                       ; Value                                 ;
++----------------------------+---------------------------------------+
+; Number of entity instances ; 1                                     ;
+; Entity Instance            ; fifo:b2v_inst|scfifo:scfifo_component ;
+;     -- FIFO Type           ; Single Clock                          ;
+;     -- lpm_width           ; 12                                    ;
+;     -- LPM_NUMWORDS        ; 512                                   ;
+;     -- LPM_SHOWAHEAD       ; OFF                                   ;
+;     -- USE_EAB             ; ON                                    ;
++----------------------------+---------------------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                          ;
++-------------------------------------------+-----------------------------------------------+
+; Name                                      ; Value                                         ;
++-------------------------------------------+-----------------------------------------------+
+; Number of entity instances                ; 1                                             ;
+; Entity Instance                           ; rom:b2v_inst3|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                           ;
+;     -- WIDTH_A                            ; 12                                            ;
+;     -- NUMWORDS_A                         ; 256                                           ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                  ;
+;     -- WIDTH_B                            ; 1                                             ;
+;     -- NUMWORDS_B                         ; 1                                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                        ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                  ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                          ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                     ;
++-------------------------------------------+-----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:b2v_inst"                                                                                            ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; empty ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; full  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 11.0 Build 157 04/27/2011 SJ Full Version
+    Info: Processing started: Thu Jun 06 22:49:47 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off phase_shift -c phase_shift
+Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info: Found 1 design units, including 1 entities, in source file code/phase_shift_control.v
+    Info: Found entity 1: phase_shift_control
+Info: Found 1 design units, including 1 entities, in source file ipcore/rom.v
+    Info: Found entity 1: rom
+Info: Found 1 design units, including 1 entities, in source file ipcore/fifo.v
+    Info: Found entity 1: fifo
+Info: Found 1 design units, including 1 entities, in source file code/rom_read.v
+    Info: Found entity 1: rom_read
+Info: Found 1 design units, including 1 entities, in source file code/phase_shift_tb.v
+    Info: Found entity 1: phase_shift_tb
+Info: Found 1 design units, including 1 entities, in source file code/phase_shift.v
+    Info: Found entity 1: phase_shift
+Info: Elaborating entity "phase_shift" for the top level hierarchy
+Info: Elaborating entity "fifo" for hierarchy "fifo:b2v_inst"
+Info: Elaborating entity "scfifo" for hierarchy "fifo:b2v_inst|scfifo:scfifo_component"
+Info: Elaborated megafunction instantiation "fifo:b2v_inst|scfifo:scfifo_component"
+Info: Instantiated megafunction "fifo:b2v_inst|scfifo:scfifo_component" with the following parameter:
+    Info: Parameter "add_ram_output_register" = "OFF"
+    Info: Parameter "intended_device_family" = "Cyclone II"
+    Info: Parameter "lpm_numwords" = "512"
+    Info: Parameter "lpm_showahead" = "OFF"
+    Info: Parameter "lpm_type" = "scfifo"
+    Info: Parameter "lpm_width" = "12"
+    Info: Parameter "lpm_widthu" = "9"
+    Info: Parameter "overflow_checking" = "ON"
+    Info: Parameter "underflow_checking" = "ON"
+    Info: Parameter "use_eab" = "ON"
+Info: Found 1 design units, including 1 entities, in source file db/scfifo_4t31.tdf
+    Info: Found entity 1: scfifo_4t31
+Info: Elaborating entity "scfifo_4t31" for hierarchy "fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated"
+Info: Found 1 design units, including 1 entities, in source file db/a_dpfifo_nk31.tdf
+    Info: Found entity 1: a_dpfifo_nk31
+Info: Elaborating entity "a_dpfifo_nk31" for hierarchy "fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo"
+Info: Found 1 design units, including 1 entities, in source file db/a_fefifo_s7f.tdf
+    Info: Found entity 1: a_fefifo_s7f
+Info: Elaborating entity "a_fefifo_s7f" for hierarchy "fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo|a_fefifo_s7f:fifo_state"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_go7.tdf
+    Info: Found entity 1: cntr_go7
+Info: Elaborating entity "cntr_go7" for hierarchy "fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo|a_fefifo_s7f:fifo_state|cntr_go7:count_usedw"
+Info: Found 1 design units, including 1 entities, in source file db/dpram_cv01.tdf
+    Info: Found entity 1: dpram_cv01
+Info: Elaborating entity "dpram_cv01" for hierarchy "fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo|dpram_cv01:FIFOram"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_2vj1.tdf
+    Info: Found entity 1: altsyncram_2vj1
+Info: Elaborating entity "altsyncram_2vj1" for hierarchy "fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo|dpram_cv01:FIFOram|altsyncram_2vj1:altsyncram2"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_3pc1.tdf
+    Info: Found entity 1: altsyncram_3pc1
+Info: Elaborating entity "altsyncram_3pc1" for hierarchy "fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo|dpram_cv01:FIFOram|altsyncram_2vj1:altsyncram2|altsyncram_3pc1:altsyncram3"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_ijb.tdf
+    Info: Found entity 1: cntr_ijb
+Info: Elaborating entity "cntr_ijb" for hierarchy "fifo:b2v_inst|scfifo:scfifo_component|scfifo_4t31:auto_generated|a_dpfifo_nk31:dpfifo|cntr_ijb:rd_ptr_count"
+Info: Elaborating entity "rom" for hierarchy "rom:b2v_inst3"
+Info: Elaborating entity "altsyncram" for hierarchy "rom:b2v_inst3|altsyncram:altsyncram_component"
+Info: Elaborated megafunction instantiation "rom:b2v_inst3|altsyncram:altsyncram_component"
+Info: Instantiated megafunction "rom:b2v_inst3|altsyncram:altsyncram_component" with the following parameter:
+    Info: Parameter "address_aclr_a" = "NONE"
+    Info: Parameter "clock_enable_input_a" = "BYPASS"
+    Info: Parameter "clock_enable_output_a" = "BYPASS"
+    Info: Parameter "init_file" = "sine.mif"
+    Info: Parameter "intended_device_family" = "Cyclone IV E"
+    Info: Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info: Parameter "lpm_type" = "altsyncram"
+    Info: Parameter "numwords_a" = "256"
+    Info: Parameter "operation_mode" = "ROM"
+    Info: Parameter "outdata_aclr_a" = "NONE"
+    Info: Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info: Parameter "widthad_a" = "8"
+    Info: Parameter "width_a" = "12"
+    Info: Parameter "width_byteena_a" = "1"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_tk91.tdf
+    Info: Found entity 1: altsyncram_tk91
+Info: Elaborating entity "altsyncram_tk91" for hierarchy "rom:b2v_inst3|altsyncram:altsyncram_component|altsyncram_tk91:auto_generated"
+Info: Elaborating entity "phase_shift_control" for hierarchy "phase_shift_control:b2v_inst4"
+Info (10041): Inferred latch for "data_out[0]" at phase_shift_control.v(25)
+Info (10041): Inferred latch for "data_out[1]" at phase_shift_control.v(25)
+Info (10041): Inferred latch for "data_out[2]" at phase_shift_control.v(25)
+Info (10041): Inferred latch for "data_out[3]" at phase_shift_control.v(25)
+Info (10041): Inferred latch for "data_out[4]" at phase_shift_control.v(25)
+Info (10041): Inferred latch for "data_out[5]" at phase_shift_control.v(25)
+Info (10041): Inferred latch for "data_out[6]" at phase_shift_control.v(25)
+Info (10041): Inferred latch for "data_out[7]" at phase_shift_control.v(25)
+Info (10041): Inferred latch for "data_out[8]" at phase_shift_control.v(25)
+Info (10041): Inferred latch for "data_out[9]" at phase_shift_control.v(25)
+Info (10041): Inferred latch for "data_out[10]" at phase_shift_control.v(25)
+Info (10041): Inferred latch for "data_out[11]" at phase_shift_control.v(25)
+Info: Elaborating entity "rom_read" for hierarchy "rom_read:b2v_inst5"
+Warning: 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info: 1 registers lost all their fanouts during netlist optimizations. The first 1 are displayed below.
+    Info: Register "phase_shift_control:b2v_inst4|state~4" lost all its fanouts during netlist optimizations.
+Info: Generated suppressed messages file C:/Users/wxn/Desktop/phase_shift/phase_shift.map.smsg
+Info: Generating hard_block partition "hard_block:auto_generated_inst"
+Info: Implemented 142 device resources after synthesis - the final resource count might be different
+    Info: Implemented 11 input pins
+    Info: Implemented 24 output pins
+    Info: Implemented 83 logic cells
+    Info: Implemented 24 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 280 megabytes
+    Info: Processing ended: Thu Jun 06 22:49:50 2019
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/wxn/Desktop/phase_shift/phase_shift.map.smsg.
+
+

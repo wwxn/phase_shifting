@@ -1,0 +1,16 @@
+Fitter Status : Successful - Thu Jun 06 21:57:21 2019
+Quartus II Version : 11.0 Build 157 04/27/2011 SJ Full Version
+Revision Name : phase_shift
+Top-level Entity Name : phase_shift
+Family : Cyclone II
+Device : EP2C5T144C8
+Timing Models : Final
+Total logic elements : 83 / 4,608 ( 2 % )
+    Total combinational functions : 83 / 4,608 ( 2 % )
+    Dedicated logic registers : 40 / 4,608 ( 1 % )
+Total registers : 40
+Total pins : 35 / 89 ( 39 % )
+Total virtual pins : 0
+Total memory bits : 9,216 / 119,808 ( 8 % )
+Embedded Multiplier 9-bit elements : 0 / 26 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )
